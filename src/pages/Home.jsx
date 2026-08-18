@@ -1,4 +1,4 @@
-import { ThemeToggle } from "../components/ThemeToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { StarBackground } from '@/components/StarBackground';
 
 export const Home = () => {
