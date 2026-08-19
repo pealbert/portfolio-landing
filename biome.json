@@ -5,13 +5,9 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"css": {
-		"parser": {
-			"tailwindDirectives": true
-		}
-	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["**", "!node_modules", "!dist"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -21,6 +17,16 @@
 		"enabled": true,
 		"rules": {
 			"preset": "recommended"
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	},
 	"javascript": {

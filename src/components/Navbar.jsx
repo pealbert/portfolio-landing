@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const navItems = [
 	{ name: "Home", href: "#hero" },
@@ -39,8 +39,7 @@ export const Navbar = () => {
 					className="text-xl font-bold text-primary flex items-center"
 				>
 					<span className="relative z-10">
-						<span className="text-glow text-foreground">PedroTech</span>{" "}
-						Portfolio
+						<span className="text-glow text-foreground">Albert</span> Portfolio
 					</span>
 				</a>
 
@@ -58,7 +57,6 @@ export const Navbar = () => {
 				</div>
 
 				{/* mobile nav */}
-
 				<button
 					type="button"
 					onClick={() => setIsMenuOpen((prev) => !prev)}

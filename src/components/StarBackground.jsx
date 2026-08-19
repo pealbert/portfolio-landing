@@ -62,12 +62,12 @@ export const StarBackground = () => {
 					key={star.id}
 					className="star animate-pulse-subtle"
 					style={{
-						width: star.size + "px",
-						height: star.size + "px",
-						left: star.x + "%",
-						top: star.y + "%",
+						width: `${star.size}px`,
+						height: `${star.size}px`,
+						left: `${star.x}%`,
+						top: `${star.y}%`,
 						opacity: star.opacity,
-						animationDuration: star.animationDuration + "s",
+						animationDuration: `${star.animationDuration}s`,
 					}}
 				></div>
 			))}
@@ -77,12 +77,12 @@ export const StarBackground = () => {
 					key={meteor.id}
 					className="meteor animate-meteor"
 					style={{
-						width: meteor.size * 50 + "px",
-						height: meteor.size * 2 + "px",
-						left: meteor.x + "%",
-						top: meteor.y + "%",
+						width: `${meteor.size * 50}px`,
+						height: `${meteor.size * 2}px`,
+						left: `${meteor.x}%`,
+						top: `${meteor.y}%`,
 						animationDelay: meteor.delay,
-						animationDuration: meteor.animationDuration + "s",
+						animationDuration: `${meteor.animationDuration}s`,
 					}}
 				></div>
 			))}
