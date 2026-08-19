@@ -1,3 +1,3 @@
 # Portfolio landing using React + TailwindCSS
 
-56:40
+1:18:30
