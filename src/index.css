@@ -18,6 +18,7 @@
 	--animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
 	--animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
 	--animate-meteor: meteor 5s linear infinite;
+	--animate-grow-progress: grow-progress linear;
 
 	@keyframes float {
 		0%,
@@ -63,6 +64,15 @@
 			opacity: 0;
 		}
 	}
+
+	@keyframes grow-progress {
+		from {
+			transform: scaleY(0);
+		}
+		to {
+			transform: scaleY(1);
+		}
+	}
 }
 
 @layer base {
@@ -91,18 +101,40 @@
 	}
 
 	* {
-		@apply border-border;
+		-webkit-tap-highlight-color: transparent;
+
+		@apply border-border box-border;
 	}
 
 	html {
-			@apply scroll-smooth;
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+
+		@apply scroll-smooth;
+
+		&::-webkit-scrollbar {
+			@apply hidden;
 		}
+	}
 
 	body {
 		@apply bg-background text-foreground transition-colors duration-300;
 		font-feature-settings:
 			"rlig" 1,
 			"calt" 1;
+	}
+
+	::selection {
+		@apply bg-primary text-primary-foreground;
+	}
+
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
 	}
 }
 
@@ -155,6 +187,12 @@
 @utility meteor {
 	@apply absolute bg-linear-to-r from-white to-transparent rounded-full;
 	box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+@utility progress-bar {
+	@apply z-1000 fixed top-0 right-0 md:w-1.5 bg-primary h-full origin-top animate-grow-progress;
+
+	animation-timeline: scroll(root block);
 }
 
 #root {
